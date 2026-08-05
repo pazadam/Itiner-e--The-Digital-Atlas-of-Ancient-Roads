@@ -1,0 +1,90 @@
+from qgis.PyQt.QtCore import QVariant
+from qgis.core import (
+    QgsProject,
+    QgsGeometry,
+    QgsPointXY,
+    QgsRaster,
+    QgsField
+)
+import math
+
+# ---------------------------------------------------------------------
+# USER SETTINGS
+# ---------------------------------------------------------------------
+
+line_layer = QgsProject.instance().mapLayersByName("itiner-e_template")[0]   # <-- change
+dem_layer = QgsProject.instance().mapLayersByName("copernicus90_clip")[0]      # <-- change
+
+field_name = "avgSlope"
+
+# ---------------------------------------------------------------------
+# Create output field if needed
+# ---------------------------------------------------------------------
+
+provider = line_layer.dataProvider()
+
+if line_layer.fields().indexFromName(field_name) == -1:
+    provider.addAttributes([QgsField(field_name, QVariant.Double)])
+    line_layer.updateFields()
+
+field_idx = line_layer.fields().indexFromName(field_name)
+
+# ---------------------------------------------------------------------
+# DEM resolution
+# ---------------------------------------------------------------------
+
+pixel_size = min(dem_layer.rasterUnitsPerPixelX(),
+                 dem_layer.rasterUnitsPerPixelY())
+
+provider_dem = dem_layer.dataProvider()
+
+line_layer.startEditing()
+
+for feat in line_layer.getFeatures():
+
+    geom = feat.geometry()
+
+    length = geom.length()
+
+    if length <= pixel_size:
+        continue
+
+    n = max(2, int(math.ceil(length / pixel_size)) + 1)
+
+    distances = [i * length / (n - 1) for i in range(n)]
+
+    elevations = []
+    valid_distances = []
+
+    for d in distances:
+
+        pt = geom.interpolate(d).asPoint()
+
+        ident = provider_dem.identify(pt, QgsRaster.IdentifyFormatValue)
+
+        if ident.isValid():
+            val = ident.results().get(1)
+
+            if val is not None:
+                elevations.append(val)
+                valid_distances.append(d)
+
+    angles = []
+
+    for i in range(len(elevations) - 1):
+
+        dz = abs(elevations[i + 1] - elevations[i])
+        dx = valid_distances[i + 1] - valid_distances[i]
+
+        if dx > 0:
+            angle = math.degrees(math.atan(dz / dx))
+            angles.append(angle)
+
+    if angles:
+        avg = sum(angles) / len(angles)
+        feat[field_idx] = avg
+        line_layer.updateFeature(feat)
+
+line_layer.commitChanges()
+
+print("Finished.")

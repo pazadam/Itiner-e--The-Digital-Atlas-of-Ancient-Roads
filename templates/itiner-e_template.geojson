@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "itiner-e_template",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "FID": null, "name": "Ephesus-Magnesia", "type": "Main Road", "lowerDate": 100, "lowerDateError": 50, "upperDate": null, "upperDateError": null, "description": null, "constructionPeriod": null, "itinerary": null, "segmentCertainty": "Certain", "author": "Adam", "bibliography": "Kocak 2025", "lengthGeo": 3229.071, "passability": 0.8 }, "geometry": { "type": "LineString", "coordinates": [ [ 27.521961519663133, 37.851656609892174 ], [ 27.515067333700593, 37.851219874129839 ], [ 27.509888895375791, 37.85115748330665 ], [ 27.505490342340867, 37.851999759419719 ], [ 27.500904616836372, 37.853715507057451 ], [ 27.497629098618876, 37.85511930057924 ], [ 27.494135212520217, 37.856928634451762 ], [ 27.491296430065052, 37.860266543492443 ], [ 27.490547740186766, 37.86173272783742 ], [ 27.490516544775172, 37.86173272783742 ] ] } }
+]
+}
