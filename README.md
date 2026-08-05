@@ -2,11 +2,11 @@
 
 
 
-(/assets/itiner-e\_logo.png)
+!\[logo](/assets/itiner-e\_logo.png)
 
 
 
-[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about the Roman roads, to grow the the dataset together and to disseminate the knowledge about the Roman roads to the public. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who wants to contribute their data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](contacts) **us**, so that we can discuss the specifics of your contribution, create an user account for you on the platform and add you to the shared [zotero](discuss%20the%20specifics%20of%20your%20contribution) library.
+[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about the Roman roads, to grow the the dataset together and to disseminate the knowledge about the Roman roads to the public. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who wants to contribute their data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](#contacts) **us**, so that we can discuss the specifics of your contribution, create an user account for you on the platform and add you to the shared [zotero](discuss%20the%20specifics%20of%20your%20contribution) library.
 
 
 
@@ -37,7 +37,7 @@ Custom python code to calculate an average slope along a road segment in QGIS is
 
 In order to incorporate friction of movement in difficult topography for the routing tool function, we introduce a passability modifier that reduces speed of a given mean of transport. The time calculation in the routing tool is calculated simply as Time = Distance / Velocity, where speeds of various means of transport are pre-defined.
 
-(/assets/speeds.png)
+!\[speeds](/assets/speeds.png)
 
 Passability modifier (M) modifies the time calculations as follows: $$T = \\frac{D}{V \\times M}$$
 
@@ -47,14 +47,32 @@ The modifier expresses friction of movement on slope using Tobler's hiking funct
 * We do not consider direction of movement (uphill/downhill which can be changing over a course of a single road segment).
 * The average slope therefore averages difficulties of moving uphill and downhill in both directions along the whole road segment.
 
-How it is calculated: if we consider that maximum speed is achieved on a slope of 0° (since we do not consider negative slope), the modifier is a fraction of speed of movement on a given slope to a speed of movement on 0° slope: $$M = \\frac{V(\\text{average slope of road segment})}{V(\\text{on slope } 0^\\circ)}$$
+How it is calculated: if we consider that maximum speed is achieved on a slope of 0° (since we do not consider negative slope), the modifier is a fraction of speed of movement on a given slope to a speed of movement on 0° slope:
+$$M = \\frac{V(\\text{average slope of road segment})}{V(\\text{on slope } 0^\\circ)}$$
 
-Using the Tobler's formula we get: $$M = \\frac{{6e}^{-3.5\\left|tan\\theta +0.05\\right|}}{{6e}^{-3.5\\left|\\tan⁡(0)+0.05\\right|}}
+Using the Tobler's formula we get: $$
+M = \\frac{6e^{-3.5\\left|\\tan\\left(\\theta \\frac{\\pi}{180}\\right)+0.05\\right|}}
+{6e^{-3.5\\left|\\tan(0) + 0.05\\right|}}
+$$
 
-If we simplify then: $$M = \\frac{{e}^{-3.5\\left|tan\\theta +0.05\\right|}}{{e}^{-3.5\\left|\\tan⁡(0)+0.05\\right|}}
+If we simplify then: $$
+M = \\frac{e^{-3.5\\left|\\tan\\left(\\theta \\frac{\\pi}{180}\\right)+0.05\\right|}}
+{e^{-3.5\\left|\\tan(0) + 0.05\\right|}}
+$$
 
-$$M = \\frac{{e}^{-3.5\\left|tan\\theta +0.05\\right|}}{0.839457}
+Since
 
+$$
+e^{-3.5\\left|\\tan(0)+0.05\\right|}=0.839457,
+$$
+
+the expression becomes
+
+$$
+M = \\frac{e^{-3.5\\left|\\tan\\left(\\theta \\frac{\\pi}{180}\\right)+0.05\\right|}}
+
+{0.839457}
+$$
 The modifier has value between 0 (impassable) to 1 (no speed penalty). Moreover, we apply the modifier only to slopes larger than 6% (ca. 3.43°), assuming roads below this threshold allow more or less frictionless movement.
 
 The code for the field calculator in ArcGIS then looks like this:
