@@ -37,7 +37,7 @@ Custom python code to calculate an average slope along a road segment in QGIS is
 
 In order to incorporate friction of movement in difficult topography for the routing tool function, we introduce a passability modifier that reduces speed of a given mean of transport. The time calculation in the routing tool is calculated simply as Time = Distance / Velocity, where speeds of various means of transport are pre-defined.
 
-!\[Speeds](assets/speeds.png)
+!\[Speeds](https://github.com/pazadam/Itiner-e--The-Digital-Atlas-of-Ancient-Roads/blob/main/assets/speeds.png)
 
 Passability modifier (M) modifies the time calculations as follows: 
 
