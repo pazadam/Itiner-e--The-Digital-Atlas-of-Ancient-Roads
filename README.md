@@ -97,9 +97,7 @@ the expression becomes
 
 
 $$
-M = \\frac{e^{-3.5\\left|\\tan\\left(\\theta \\frac{\\pi}{180}\\right)+0.05\\right|}}
-
-{0.839457}
+M = \\frac{e^{-3.5\\left|\\tan\\left(\\theta \\frac{\\pi}{180}\\right)+0.05\\right|}}{0.839457}
 $$
 
 
