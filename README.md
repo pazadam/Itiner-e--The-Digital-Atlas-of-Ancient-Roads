@@ -6,7 +6,7 @@
 
 
 
-[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about the Roman roads, to grow the the dataset together and to disseminate the knowledge about the Roman roads to the public. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who wants to contribute their data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](contacts) **us**, so that we can create an user account for you on the platform and discuss the specifics of your contribution.
+[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about the Roman roads, to grow the the dataset together and to disseminate the knowledge about the Roman roads to the public. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who wants to contribute their data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](contacts) **us**, so that we can discuss the specifics of your contribution, create an user account for you on the platform and add you to the shared [zotero](discuss%20the%20specifics%20of%20your%20contribution) library.
 
 
 
@@ -98,6 +98,8 @@ And for field calculator in QGIS as this:
 
 
 ### Useful resources
+
+Project's [zotero library](https://www.zotero.org/groups/5141113/itiner-e)
 
 [Pleiades Gazetteer](https://pleiades.stoa.org/downloads)
 
