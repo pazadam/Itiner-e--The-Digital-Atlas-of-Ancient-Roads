@@ -167,7 +167,7 @@ Project's [zotero library](https://www.zotero.org/groups/5141113/itiner-e)
 
 Adam Pažout (Adam.Pazout@uab.cat)
 
-Tom Brughmans (t.b@au.dk)
+Tom Brughmans (t.b@cas.au.dk)
 
 Pau de Soto (PauDe.Soto@uab.cat)
 
