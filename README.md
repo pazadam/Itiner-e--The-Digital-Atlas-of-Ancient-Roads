@@ -6,7 +6,7 @@
 
 
 
-[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about Roman roads, to grow the dataset together and to openly disseminate knowledge about Roman roads. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who want to contribute data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](#contacts) **us**, so that we can discuss the specifics of your contribution, create a user account for you on the platform, and add you to the shared [zotero](https://www.zotero.org/groups/5141113/itiner-e) library.
+[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about Roman roads, to grow the dataset together and to openly disseminate knowledge about Roman roads. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who want to contribute data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](#contacts) **us**, so that we can discuss the specifics of your contribution, create a user account for you on the platform, add you as a contributor to the editing spreadsheet, and add you to the shared [zotero](https://www.zotero.org/groups/5141113/itiner-e) library.
 
 
 
@@ -17,9 +17,11 @@ The original data paper, describing the dataset, the methodology of data collect
 #### **Contents**
 
 1. [Description of the repository](#description-of-the-repository)
-2. [Passability modifier](#passability-modifier)
-3. [Useful resources](#useful-resources)
-4. [Contacts](#contacts)
+2. [Temporary editing spreadsheet](#temporary-editing-spreadsheet)
+3. [Passability modifier](#passability-modifier)
+4. [Useful resources](#useful-resources)
+5. [Contacts](#contacts)
+6. [Acknowledgements](#acknowledgements)
 
 
 
@@ -31,7 +33,11 @@ Templates in GeoJson and Shapefile formats to be used for data digitization in G
 
 Custom python code to calculate an average slope along a road segment in QGIS is in the [**itiner-e\_avgSlope\_PyQGIS**](itiner-e_avgSlope_PyQGIS.txt) file. Its contents can be copied and pasted directly in the PyQGIS editor in QGIS. You only need to change the names of the road layer and DEM layer in the code (see complete instructions in the tutorial).
 
+### Temporary editing spreadsheet
 
+Itiner-e stores a record of all changes. However, the current editing procedure does not enable editors to directly suggest modifications to existing URI's added by other editors. This spreadsheet is a temporary record until the editorial procedure is modified to enable these comments as part of the upload procedures.
+
+Complete a row in this document each time you recommend that an old existing Itiner-e URI should be replaced wioth or modified by a new Itiner-e URI you created as part of your edits. The comments field should include a natural language description of the suggested replacement, concrete arguments justifying it, sources used, and a description of how the replacement should happen (e.g. complete replacement of old for new, partial replacement of old for the lenght of new). Administrators use this information to evaluate changes in the dataset, avoid multiplication, and ensure authorship of all historical contributors is retained. This document should only be used for recommended replacements, and no entries should be added here for newly added roads that do not replace or modify existing Itiner-e URIs. 
 
 ### Passability modifier
 
