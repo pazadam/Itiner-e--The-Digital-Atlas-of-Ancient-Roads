@@ -6,11 +6,11 @@
 
 
 
-[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about the Roman roads, to grow the the dataset together and to disseminate the knowledge about the Roman roads to the public. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who wants to contribute their data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](#contacts) **us**, so that we can discuss the specifics of your contribution, create an user account for you on the platform and add you to the shared [zotero](https://www.zotero.org/groups/5141113/itiner-e) library.
+[Itiner-e](https://itiner-e.org) is an open digital atlas of Roman roads. Its aim is to provide a platform for the scholarly community to share data about Roman roads, to grow the dataset together and to openly disseminate knowledge about Roman roads. It is an ongoing collaborative effort and for this reason we created this repository as a starting point for all researchers who want to contribute data. If you want to start contributing, **read the tutorial**, download the **templates** and [**contact**](#contacts) **us**, so that we can discuss the specifics of your contribution, create a user account for you on the platform, and add you to the shared [zotero](https://www.zotero.org/groups/5141113/itiner-e) library.
 
 
 
-The original data paper, describing the dataset, the methodology of data collection and other technical details is available in open access [here](https://doi.org/10.1038/s41597-025-06140-z).
+The original data paper, describing the dataset, the methodology of data collection and other technical details is available open access [here](https://doi.org/10.1038/s41597-025-06140-z).
 
 
 
@@ -25,9 +25,9 @@ The original data paper, describing the dataset, the methodology of data collect
 
 ### Description of the repository
 
-The [**itiner-e\_tutorial**](itiner-e_tutorial.pdf) contains basic introduction into the goals of the project, data structure employed for the road data, introduction to the web platform,  workflows on how to upload and edit the data online and workflows for QGIS and ArcGIS on how to calculate certain data attributes required for the database.
+The [**itiner-e\_tutorial**](itiner-e_tutorial.pdf) contains a basic introduction to the goals of the project, data structure employed for the road data, introduction to the web platform,  workflows on how to upload and edit the data online, and workflows for QGIS and ArcGIS on how to calculate certain data attributes required for the database.
 
-Templates in GeoJson and Shapefile formats to be used for data digitization in GIS are stored in [**templates**](/templates) folder. GeoJson file is formated according to the instructions and template on the website and so it can be uploaded to the database without any editing. The Shapefile template has truncated field names due to technical limitations, so upon upload a field mapping must be done (see complete instructions in the tutorial).
+Templates in GeoJson and Shapefile formats to be used for data digitization in GIS are stored in the [**templates**](/templates) folder. The GeoJson file is formated according to the instructions and template on the website and so it can be uploaded to the database without any editing. The Shapefile template has truncated field names due to technical limitations, so upon upload a field mapping must be done (see complete instructions in the tutorial).
 
 Custom python code to calculate an average slope along a road segment in QGIS is in the [**itiner-e\_avgSlope\_PyQGIS**](itiner-e_avgSlope_PyQGIS.txt) file. Its contents can be copied and pasted directly in the PyQGIS editor in QGIS. You only need to change the names of the road layer and DEM layer in the code (see complete instructions in the tutorial).
 
@@ -35,7 +35,7 @@ Custom python code to calculate an average slope along a road segment in QGIS is
 
 ### Passability modifier
 
-In order to incorporate friction of movement in difficult topography for the routing tool function, we introduce a passability modifier that reduces speed of a given mean of transport. The time calculation in the routing tool is calculated simply as Time = Distance / Velocity, where speeds of various means of transport are pre-defined.
+In order to incorporate friction of movement in difficult topography for the routing tool function, we introduce a passability modifier that reduces speed of a given means of transport. The time calculation in the routing tool is calculated simply as Time = Distance / Velocity, where speeds of various means of transport are pre-defined.
 
 ![Speeds](assets/speeds.png)
 
@@ -60,7 +60,7 @@ $$M = \\frac{V(\\text{average slope of road segment})}{V(\\text{on slope } 0^\\c
 
 
 
-Using the Tobler's formula we get:
+Using Tobler's formula we get:
 
 &#x20;
 
@@ -101,7 +101,7 @@ M = \\frac{e^{-3.5\\left|\\tan\\left(\\theta \\frac{\\pi}{180}\\right)+0.05\\rig
 $$
 
 
-The modifier has value between 0 (impassable) to 1 (no speed penalty). Moreover, we apply the modifier only to slopes larger than 6% (ca. 3.43°), assuming roads below this threshold allow more or less frictionless movement.
+The modifier has a value between 0 (impassable) and 1 (no speed penalty). Moreover, we apply the modifier only to slopes larger than 6% (ca. 3.43°), assuming roads below this threshold allow more or less frictionless movement.
 
 The code for the field calculator in ArcGIS then looks like this:
 
@@ -161,6 +161,9 @@ Project's [zotero library](https://www.zotero.org/groups/5141113/itiner-e)
 
 [QuickMapServices](https://plugins.qgis.org/plugins/quick_map_services/) plugin to QGIS allowing searching and adding various basemaps and satellite imagery to QGIS.
 
+[Omnes Viae](https://www.omnesviae.org/) Roman route planner based on the Antonine Itinerary
+
+[Orbis](https://orbis.stanford.edu/) Geospatial network model of the Roman world
 
 
 ### Contacts
@@ -171,3 +174,12 @@ Tom Brughmans (t.b@cas.au.dk)
 
 Pau de Soto (PauDe.Soto@uab.cat)
 
+### Acknowledgements
+
+Danmarks Frie Forskningsfond (DFF) Sapere Aude research leadership grant (0163-00060B). Danish National Research Foundation (DNRF) Centre of Excellence for Urban Network Evolutions (UrbNet) (DNRF119). The Carlsberg Foundation Young Researcher Fellowship (CF21-0382).
+
+We would like to thank Aarhus University’s Past Networks team, Social Resilience Lab, Clara Filet, Maria Coto Sarmiento, David Gal, Lukas Orehøj Røpke, Amanda Leighton Spatzek, Aarhus University’s Centre for Humanities Computing, Peter Bjerregaard Vahlstrup.
+
+The Viator-e project was funded by the Spanish Ministry of Science, Research and Universities.
+
+Project RTI2018-098905-J-I00 funded by MCIN/AEI/ 10.13039/501100011033 and by “ERDF A way of making Europe” by the “European Union”.
