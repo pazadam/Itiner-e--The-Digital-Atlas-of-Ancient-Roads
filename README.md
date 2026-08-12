@@ -167,7 +167,7 @@ Project's [zotero library](https://www.zotero.org/groups/5141113/itiner-e)
 
 [QuickMapServices](https://plugins.qgis.org/plugins/quick_map_services/) plugin to QGIS allowing searching and adding various basemaps and satellite imagery to QGIS.
 
-[Omnes Viae](https://www.omnesviae.org/) Roman route planner based on the Antonine Itinerary
+[Omnes Viae](https://www.omnesviae.org/) Roman route planner based on Tabula Peutingeriana
 
 [Orbis](https://orbis.stanford.edu/) Geospatial network model of the Roman world
 
